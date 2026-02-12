@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-stripe-purple: #635BFF;
+  --color-stripe-blue: #0A2540;
+  --color-stripe-cyan: #80E9FF;
+  --color-stripe-green: #00D4AA;
+  --color-stripe-pink: #FF80B5;
+  --color-stripe-orange: #FF6C37;
+  --color-stripe-yellow: #FFD60A;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+@layer base {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-stripe-purple);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-stripe-purple), var(--color-stripe-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
