@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from 'react'
 import { useNarrativeStore } from '../store/narrativeStore'
+import { useNavPanelStore } from '../store/navPanelStore'
 import { sceneMap } from './sceneGraph'
 
 export function useSceneNavigation() {
@@ -10,6 +11,16 @@ export function useSceneNavigation() {
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
+      // Toggle nav panel with 'm'
+      if (e.key === 'm' || e.key === 'M') {
+        e.preventDefault()
+        useNavPanelStore.getState().toggle()
+        return
+      }
+
+      // Suppress scene navigation while nav panel is open
+      if (useNavPanelStore.getState().isOpen) return
+
       if (e.key === 'ArrowRight' || e.key === ' ') {
         if (canGoNext()) {
           e.preventDefault()
@@ -22,7 +33,7 @@ export function useSceneNavigation() {
         }
       }
     },
-    [canGoBack, canGoNext, goBack, goNext]
+    [canGoBack, canGoNext, goBack, goNext],
   )
 
   useEffect(() => {

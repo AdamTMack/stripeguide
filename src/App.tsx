@@ -1,5 +1,7 @@
 import SceneRenderer from './engine/SceneRenderer'
 import ProgressBar from './components/navigation/ProgressBar'
+import NavPanel from './components/navigation/NavPanel'
+import NavPanelTrigger from './components/navigation/NavPanelTrigger'
 import PeekButton from './components/overlays/PeekButton'
 import TechOverlay from './components/overlays/TechOverlay'
 import ErrorBoundary from './components/ui/ErrorBoundary'
@@ -31,8 +33,10 @@ export default function App() {
         <ProgressBar />
         <SceneRenderer />
         <NavButtons />
+        <NavPanelTrigger />
         <PeekButton />
         <TechOverlay />
+        <NavPanel />
       </div>
     </ErrorBoundary>
   )

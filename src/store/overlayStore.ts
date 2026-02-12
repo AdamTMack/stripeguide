@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { useNavPanelStore } from './navPanelStore'
 
 type OverlayTab = 'code' | 'flow' | 'webhooks'
 
@@ -17,7 +18,10 @@ export const useOverlayStore = create<OverlayStore>((set) => ({
   activeTab: 'code',
   sceneId: null,
 
-  open: (sceneId, tab = 'code') => set({ isOpen: true, sceneId, activeTab: tab }),
+  open: (sceneId, tab = 'code') => {
+    useNavPanelStore.getState().close()
+    set({ isOpen: true, sceneId, activeTab: tab })
+  },
   close: () => set({ isOpen: false }),
   setTab: (tab) => set({ activeTab: tab }),
 }))
