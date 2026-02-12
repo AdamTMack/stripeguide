@@ -4,6 +4,7 @@ import Scene from '../../components/ui/Scene'
 import Button from '../../components/ui/Button'
 import GuidePresence from '../../components/guide/GuidePresence'
 import AnimatedText from '../../components/ui/AnimatedText'
+import EmbeddedCheckoutDemo from '../../components/demos/EmbeddedCheckoutDemo'
 import { useSceneNavigation } from '../../engine/useSceneNavigation'
 import { getDialogue } from '../../content/dialogues'
 
@@ -85,6 +86,9 @@ export default function EmbeddedCheckoutScene() {
               <span className="rounded-full bg-stripe-green/10 px-3 py-1 text-stripe-green">Low code</span>
               <span className="rounded-full bg-stripe-purple/10 px-3 py-1 text-stripe-purple">Checkout Sessions only</span>
             </div>
+
+            {/* Live demo */}
+            <EmbeddedCheckoutDemo />
 
             <Button onClick={goNext}>Continue</Button>
           </motion.div>

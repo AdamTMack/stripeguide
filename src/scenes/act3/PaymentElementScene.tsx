@@ -4,6 +4,7 @@ import Scene from '../../components/ui/Scene'
 import Button from '../../components/ui/Button'
 import GuidePresence from '../../components/guide/GuidePresence'
 import AnimatedText from '../../components/ui/AnimatedText'
+import PaymentElementDemo from '../../components/demos/PaymentElementDemo'
 import { useSceneNavigation } from '../../engine/useSceneNavigation'
 import { getDialogue } from '../../content/dialogues'
 
@@ -89,6 +90,9 @@ export default function PaymentElementScene() {
               <span className="rounded-full bg-stripe-orange/10 px-3 py-1 text-stripe-orange">Moderate code</span>
               <span className="rounded-full bg-stripe-green/10 px-3 py-1 text-stripe-green">Works with both APIs</span>
             </div>
+
+            {/* Live demo */}
+            <PaymentElementDemo />
 
             <Button onClick={goNext}>Continue</Button>
           </motion.div>

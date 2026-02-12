@@ -4,6 +4,7 @@ import Scene from '../../components/ui/Scene'
 import Button from '../../components/ui/Button'
 import GuidePresence from '../../components/guide/GuidePresence'
 import AnimatedText from '../../components/ui/AnimatedText'
+import HostedCheckoutDemo from '../../components/demos/HostedCheckoutDemo'
 import { useSceneNavigation } from '../../engine/useSceneNavigation'
 import { getDialogue } from '../../content/dialogues'
 
@@ -74,6 +75,9 @@ export default function HostedCheckoutScene() {
               <span className="rounded-full bg-stripe-cyan/10 px-3 py-1 text-stripe-cyan">Stripe-hosted</span>
               <span className="rounded-full bg-stripe-purple/10 px-3 py-1 text-stripe-purple">Checkout Sessions only</span>
             </div>
+
+            {/* Live demo */}
+            <HostedCheckoutDemo />
 
             <Button onClick={goNext}>Continue</Button>
           </motion.div>

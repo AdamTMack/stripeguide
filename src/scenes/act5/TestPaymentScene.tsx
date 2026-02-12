@@ -3,6 +3,7 @@ import Scene from '../../components/ui/Scene'
 import Button from '../../components/ui/Button'
 import GuidePresence from '../../components/guide/GuidePresence'
 import AnimatedText from '../../components/ui/AnimatedText'
+import PaymentElementDemo from '../../components/demos/PaymentElementDemo'
 import { useSceneNavigation } from '../../engine/useSceneNavigation'
 import { getDialogue } from '../../content/dialogues'
 
@@ -26,14 +27,14 @@ export default function TestPaymentScene() {
 
         {showContent && (
           <div className="space-y-6">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <p className="text-lg text-white/70">
-                Live Stripe demo will be available in Phase 3.
-              </p>
-              <p className="mt-2 text-sm text-white/40">
-                Test card: 4242 4242 4242 4242
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <p className="text-sm text-white/60">
+                Use test card <span className="font-mono text-stripe-purple">4242 4242 4242 4242</span> with any future expiry and any CVC.
               </p>
             </div>
+
+            <PaymentElementDemo />
+
             <Button onClick={goNext}>Continue to Cheat Sheet</Button>
           </div>
         )}
